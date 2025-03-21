@@ -4,7 +4,7 @@
     <test name="PetAPITest">
         <classes>
             <class name="tests.PetAPITest"/>
-            <class name="tests.simpleClass"/>
+            <class name="tests.SimpleClass"/>
         </classes>
     </test>
 </suite>

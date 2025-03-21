@@ -13,7 +13,7 @@ import org.awaitility.Awaitility;
 import org.json.JSONObject;
 
 
-public class petAPItest {
+public class PetAPITest {
 	String baseuri= "https://petstore.swagger.io";
 	@Test(priority = 1)
 	public void post() {
