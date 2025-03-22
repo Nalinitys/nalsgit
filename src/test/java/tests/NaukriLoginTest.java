@@ -23,7 +23,7 @@ public class NaukriLoginTest {
             ChromeOptions options = new ChromeOptions();
 
             // Run Chrome in Headless Mode
-            options.addArguments("--headless=new");  // Use new headless mode
+//            options.addArguments("--headless=new");  // Use new headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
@@ -44,11 +44,8 @@ public class NaukriLoginTest {
             System.out.println("❌ Test failed: WebDriver is not initialized!");
             return;
         }
-        String email = "nalinitys@gmail.com";
-        String password = "sytinilan@143";
-
-//        String email = System.getenv("NAUKRIUSERNAME");
-//        String password = System.getenv("NAUKRIPASSWORD");
+        String email = System.getenv("NAUKRIUSERNAME");
+        String password = System.getenv("NAUKRIPASSWORD");
 
         if (email == null || password == null) {
             System.out.println("❌ Credentials not found! Set NAUKRI_EMAIL and NAUKRI_PASSWORD.");
@@ -60,9 +57,9 @@ public class NaukriLoginTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         try {
-            WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));
-            WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='password']")));
-            WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Login')]")));
+        	WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@placeholder, 'Email ID')]")));
+            WebElement passwordField = driver.findElement(By.xpath("//input[contains(@placeholder, 'Password')]"));
+            WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
 
             emailField.sendKeys(email);
             passwordField.sendKeys(password);
