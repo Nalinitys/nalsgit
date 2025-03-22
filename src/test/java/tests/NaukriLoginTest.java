@@ -17,7 +17,8 @@ public class NaukriLoginTest {
 
             @BeforeClass
             public void setup() {
-                WebDriverManager.chromedriver().setup();
+             // Force update ChromeDriver to match Chrome version
+                WebDriverManager.chromedriver().clearDriverCache().setup();
                 ChromeOptions options = new ChromeOptions();
                 
                 // Run Chrome in Headless Mode
