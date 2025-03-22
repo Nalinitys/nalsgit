@@ -44,3 +44,17 @@ jobs:
         to: "nalinibtech@gmail.com"
         from: "GitHub Actions <your-email@example.com>"
 
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Trigger Jenkins Job
+        run: |
+          curl -X POST "http://your-jenkins-server/job/PetStoreAPITests/buildWithParameters" \
+          --user "jenkins-username:jenkins-api-token" \
+          --data-urlencode "token=your-jenkins-job-token" \
+          --data-urlencode "NAUKRIUSERNAME=${{ secrets.NAUKRIUSERNAME }}" \
+          --data-urlencode "NAUKRIPASSWORD=${{ secrets.NAUKRIPASSWORD }}"
+
