@@ -19,14 +19,15 @@ public class NaukriLoginTest {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu", "--no-sandbox");
         driver = new ChromeDriver(options);
     }
 
     @Test
     public void naukriLoginTest() throws InterruptedException {
-    	String email = "nalinitys@gmail.com";
-        String password = "sytinilan@143";     
+    	String email = System.getenv("NAUKRI_EMAIL");
+        String password = System.getenv("NAUKRI_PASSWORD");
+
 
         if (email == null || password == null) {
             throw new RuntimeException("❌ Credentials not found! Set NAUKRI_EMAIL and NAUKRI_PASSWORD.");
@@ -35,7 +36,6 @@ public class NaukriLoginTest {
         // Open Naukri Login Page
         driver.get("https://www.naukri.com/nlogin/login");
         driver.manage().window().maximize();
-        System.out.println(driver.getPageSource());
 
         // Explicit wait for login fields
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -61,7 +61,7 @@ public class NaukriLoginTest {
         WebElement save = driver.findElement(By.xpath("//*[text()='Save']"));
         save.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         System.out.println("✅ Successfully logged into Naukri!");
     }
 
