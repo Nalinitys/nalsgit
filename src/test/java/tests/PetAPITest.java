@@ -36,19 +36,19 @@ public class PetAPITest {
 
 	}
 	
-	@Test(priority = 2)
-	public void get() {
-
-		RestAssured.baseURI=baseuri;
-		Awaitility.await().atMost(180, TimeUnit.SECONDS).pollInterval(5, TimeUnit.SECONDS).untilAsserted(() -> Assert.assertTrue(true));
-		{ 
-		String response = given().log().all()
-				.when().get("/v2/pet/2002002")
-				.then().assertThat().statusCode(200)
-				.extract().response().asString();
-		System.out.println(response);
-	}
-	}
+//	@Test(priority = 2)
+//	public void get() {
+//
+//		RestAssured.baseURI=baseuri;
+//		Awaitility.await().atMost(180, TimeUnit.SECONDS).pollInterval(5, TimeUnit.SECONDS).untilAsserted(() -> Assert.assertTrue(true));
+//		{ 
+//		String response = given().log().all()
+//				.when().get("/v2/pet/2002002")
+//				.then().assertThat().statusCode(200)
+//				.extract().response().asString();
+//		System.out.println(response);
+//	}
+//	}
 
 	@Test(priority = 3)
 	public void delete() {

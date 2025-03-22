@@ -68,6 +68,19 @@
 <version>3.0.0</version>
 <scope>test</scope>
 </dependency>
+ <!-- Selenium WebDriver -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.9.0</version>
+    </dependency>
+
+    <!-- WebDriver Manager (for handling drivers automatically) -->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.5.3</version>
+    </dependency>
 <!-- https://mvnrepository.com/artifact/org.json/json -->
 <dependency>
     <groupId>org.json</groupId>
