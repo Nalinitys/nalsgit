@@ -65,7 +65,7 @@ public class NaukriLoginTest {
             e.printStackTrace();
         } finally {
             // Close browser
-          //  driver.quit();
+            driver.quit();
         }
     }
 }
