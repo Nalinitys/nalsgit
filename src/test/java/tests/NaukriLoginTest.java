@@ -17,24 +17,8 @@ public class NaukriLoginTest {
 
             @BeforeClass
             public void setup() {
-             // Force update ChromeDriver to match Chrome version
-                WebDriverManager.chromedriver().clearDriverCache().setup();
-                ChromeOptions options = new ChromeOptions();
-                
-                // Run Chrome in Headless Mode
-                options.addArguments("--headless");  
-                options.addArguments("--disable-gpu"); 
-                options.addArguments("--no-sandbox");  
-                options.addArguments("--disable-dev-shm-usage");  // Prevent memory issues
-                options.addArguments("--disable-popup-blocking");  
-                options.addArguments("--disable-extensions");
-                options.addArguments("--disable-software-rasterizer");
-
-                // Fix user-data-dir conflict
-                options.addArguments("--user-data-dir=/tmp/chrome-user-data");  
-                options.addArguments("--remote-debugging-port=9222");  
-
-                driver = new ChromeDriver(options);
+            	WebDriverManager.chromedriver().setup();
+        		driver = new ChromeDriver();
             }
     @Test
     public void naukriLoginTest() throws InterruptedException {

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-22T18:52:06 IST" name="Default suite" finished-at="2025-03-22T18:52:38 IST" duration-ms="32124">
+  <suite started-at="2025-03-22T23:41:54 IST" name="Default suite" finished-at="2025-03-22T23:42:24 IST" duration-ms="30524">
     <groups>
     </groups>
-    <test started-at="2025-03-22T18:52:06 IST" name="Default test" finished-at="2025-03-22T18:52:38 IST" duration-ms="32124">
+    <test started-at="2025-03-22T23:41:54 IST" name="Default test" finished-at="2025-03-22T23:42:24 IST" duration-ms="30524">
       <class name="tests.NaukriLoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.NaukriLoginTest@7530ad9c]" started-at="2025-03-22T18:52:06 IST" name="setup" finished-at="2025-03-22T18:52:11 IST" duration-ms="4170" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.NaukriLoginTest@7530ad9c]" started-at="2025-03-22T23:41:54 IST" name="setup" finished-at="2025-03-22T23:42:07 IST" duration-ms="12875" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="naukriLoginTest()[pri:0, instance:tests.NaukriLoginTest@7530ad9c]" started-at="2025-03-22T18:52:11 IST" name="naukriLoginTest" finished-at="2025-03-22T18:52:38 IST" duration-ms="27122" status="PASS">
+        <test-method signature="naukriLoginTest()[pri:0, instance:tests.NaukriLoginTest@7530ad9c]" started-at="2025-03-22T23:42:07 IST" name="naukriLoginTest" finished-at="2025-03-22T23:42:24 IST" duration-ms="17246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- naukriLoginTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.NaukriLoginTest@7530ad9c]" started-at="2025-03-22T18:52:38 IST" name="teardown" finished-at="2025-03-22T18:52:38 IST" duration-ms="765" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.NaukriLoginTest@7530ad9c]" started-at="2025-03-22T23:42:24 IST" name="teardown" finished-at="2025-03-22T23:42:24 IST" duration-ms="367" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
