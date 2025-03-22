@@ -1,4 +1,4 @@
-name: Scheduled Job with Email Notification
+name: Scheduled Job with Email Notification~
 
 on:
   schedule:
