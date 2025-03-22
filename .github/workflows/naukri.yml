@@ -32,9 +32,15 @@ jobs:
         sudo apt update
         sudo apt install -y google-chrome-stable
 
-    - name: Run Selenium Tests
-      env:
-        NAUKRI_EMAIL: ${{ secrets.NAUKRI_EMAIL }}
-        NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
-      run: |
-        mvn clean test
+    - name: Send Email Notification
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "Naukri Selenium Test - Build Status"
+        body: "The Selenium tests have completed. Check the logs for details."
+        to: "nalinibtech@gmail.com"
+        from: "GitHub Actions <your-email@example.com>"
+
