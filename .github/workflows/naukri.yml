@@ -1,8 +1,8 @@
-name: Scheduled Job with Email Notification~
+name: Scheduled Job with Email Notification
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  
+    - cron: "*/10 * * * *"  # Runs every 10 minutes
 
 jobs:
   run-cron-job:
@@ -17,10 +17,10 @@ jobs:
       - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com  # Change for other providers (e.g., smtp.office365.com)
+          server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.GMAILUSERNAME }}  # Set in GitHub Secrets
-          password: ${{ secrets.GMAILPASSWORD }}  # Set in GitHub Secrets (App Password)
+          username: ${{ secrets.GMAILUSERNAME }}
+          password: ${{ secrets.GMAILPASSWORD }}
           subject: "GitHub Actions Job Completed ✅"
           body: "Hello, your scheduled job has been executed successfully!"
           to: "nalinibtech@gmail.com"
