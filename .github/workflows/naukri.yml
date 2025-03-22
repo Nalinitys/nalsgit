@@ -40,6 +40,6 @@ jobs:
           password: ${{ secrets.GMAILPASSWORD }}
           subject: "GitHub Actions Job Completed ✅"
           body: "Hello, your scheduled job has been executed successfully!"
-          to: "${{ secrets.GMAILUSERNAME }}"
+          to: "nalinibtech@gmail.com"
           from: "GitHub Actions <${{ secrets.GMAILUSERNAME }}>"
-          attachments: output.txt
+          attachments: test-results.txt
