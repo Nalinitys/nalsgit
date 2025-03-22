@@ -1,46 +1,15 @@
-name: Naukri Selenium Test
+name: Scheduled Job
 
-on:  
-  push:  
-    branches: [ main ]  
-  pull_request:  
-    branches: [ main ]  
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs every day at midnight UTC
 
 jobs:
-  run-selenium-tests:
+  run-cron-job:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '17'
-
-    - name: Cache Maven Dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-maven
-
-    - name: Install Chrome
-      run: |
-        sudo apt update
-        sudo apt install -y google-chrome-stable
-
-    - name: Send Email Notification
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "Naukri Selenium Test - Build Status"
-        body: "The Selenium tests have completed. Check the logs for details."
-        to: "nalinibtech@gmail.com"
-        from: "GitHub Actions <your-email@example.com>"
-
+      - name: Run a Script
+        run: echo "Hello, this is a scheduled GitHub Actions job!"
