@@ -17,6 +17,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Install Chrome
+        run: |
+          sudo apt update
+          sudo apt install -y google-chrome-stable
 
       - name: Run Maven Tests
         run: mvn clean test  # Executes Maven test suite
