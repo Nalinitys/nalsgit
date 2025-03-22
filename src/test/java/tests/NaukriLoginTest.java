@@ -14,7 +14,20 @@ import java.time.Duration;
 
 public class NaukriLoginTest {
 	WebDriver driver = new ChromeDriver();
-           
+	@BeforeClass
+    public void setup() {
+        ChromeOptions options = new ChromeOptions();
+
+        // Run Chrome in Headless Mode
+        options.addArguments("--headless=new");  // Use new headless mode
+        options.addArguments("--disable-gpu");  
+        options.addArguments("--no-sandbox");  
+        options.addArguments("--disable-dev-shm-usage");  
+        options.addArguments("--window-size=1920,1080"); // Ensure full-page rendering
+
+        driver = new ChromeDriver(options);
+    }
+
     @Test
     public void naukriLoginTest() throws InterruptedException {
         String email = "nalinitys@gmail.com";
