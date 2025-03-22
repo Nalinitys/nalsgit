@@ -41,7 +41,7 @@ public class NaukriLoginTest {
         WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@placeholder, 'Email ID')]")));
         WebElement passwordField = driver.findElement(By.xpath("//input[contains(@placeholder, 'Password')]"));
         WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
-
+        Thread.sleep(5000);
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         loginButton.click();
@@ -60,7 +60,6 @@ public class NaukriLoginTest {
         WebElement save = driver.findElement(By.xpath("//*[text()='Save']"));
         save.click();
 
-        Thread.sleep(5000);
         System.out.println("✅ Successfully logged into Naukri!");
     }
 
