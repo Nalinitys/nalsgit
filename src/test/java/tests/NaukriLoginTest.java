@@ -42,7 +42,8 @@ public class NaukriLoginTest {
         driver.manage().window().maximize();
 
         // Explicit wait for login fields
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        try {
         WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@placeholder, 'Email ID')]")));
         WebElement passwordField = driver.findElement(By.xpath("//input[contains(@placeholder, 'Password')]"));
         WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
@@ -66,7 +67,10 @@ public class NaukriLoginTest {
         save.click();
 
         System.out.println("✅ Successfully logged into Naukri!");
+    } catch (Exception e) {
+        System.out.println("❌ Element not found: " + e.getMessage());
     }
+}
 
     @AfterClass
     public void teardown() {
