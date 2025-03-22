@@ -25,8 +25,8 @@ public class NaukriLoginTest {
 
     @Test
     public void naukriLoginTest() throws InterruptedException {
-    	String email = System.getenv("NAUKRI_EMAIL");
-        String password = System.getenv("NAUKRI_PASSWORD");
+    	String email = System.getenv("NAUKRIUSERNAME");
+        String password = System.getenv("NAUKRIPASSWORD");
 
 
         if (email == null || password == null) {
