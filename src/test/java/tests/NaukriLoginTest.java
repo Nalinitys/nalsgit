@@ -17,8 +17,14 @@ public class NaukriLoginTest {
 
             @BeforeClass
             public void setup() {
-            	WebDriverManager.chromedriver().setup();
-        		driver = new ChromeDriver();
+            	WebDriverManager.chromedriver().clearDriverCache().setup();
+            	ChromeOptions chromeOptions = new ChromeOptions();
+            	chromeOptions.addArguments("--no-sandbox");
+            	chromeOptions.addArguments("--headless");
+            	chromeOptions.addArguments("--disable-dev-shm-usage");
+            	chromeOptions.addArguments("--ignore-ssl-errors=yes");
+            	chromeOptions.addArguments("--ignore-certificate-errors");
+            	driver = new ChromeDriver(chromeOptions);
             }
     @Test
     public void naukriLoginTest() throws InterruptedException {
