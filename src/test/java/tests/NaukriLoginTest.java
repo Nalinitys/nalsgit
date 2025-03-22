@@ -25,9 +25,8 @@ public class NaukriLoginTest {
 
     @Test
     public void naukriLoginTest() throws InterruptedException {
-    	String email = System.getenv("NAUKRIUSERNAME");
-        String password = System.getenv("NAUKRIPASSWORD");
-
+        String email = "nalinitys@gmail.com";
+        String password = "sytinilan@143";
 
         if (email == null || password == null) {
             throw new RuntimeException("❌ Credentials not found! Set NAUKRI_EMAIL and NAUKRI_PASSWORD.");
