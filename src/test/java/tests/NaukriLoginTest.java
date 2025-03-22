@@ -13,19 +13,8 @@ import org.testng.annotations.*;
 import java.time.Duration;
 
 public class NaukriLoginTest {
-    WebDriver driver;
-
-            @BeforeClass
-            public void setup() {
-            	WebDriverManager.chromedriver().clearDriverCache().setup();
-            	ChromeOptions chromeOptions = new ChromeOptions();
-            	chromeOptions.addArguments("--no-sandbox");
-            	chromeOptions.addArguments("--headless");
-            	chromeOptions.addArguments("--disable-dev-shm-usage");
-            	chromeOptions.addArguments("--ignore-ssl-errors=yes");
-            	chromeOptions.addArguments("--ignore-certificate-errors");
-            	driver = new ChromeDriver(chromeOptions);
-            }
+	WebDriver driver = new ChromeDriver();
+           
     @Test
     public void naukriLoginTest() throws InterruptedException {
         String email = "nalinitys@gmail.com";
