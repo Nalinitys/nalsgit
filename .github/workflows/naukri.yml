@@ -40,7 +40,7 @@ jobs:
           if [ -f target/surefire-reports/*.txt ]; then
             cat target/surefire-reports/*.txt > test-results.txt
           else
-            echo "No test report found!" > test-results.txt
+            echo "No test report found! " > test-results.txt
           fi
           
       - name: Send Email Notification
