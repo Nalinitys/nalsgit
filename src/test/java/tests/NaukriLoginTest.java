@@ -24,11 +24,13 @@ public class NaukriLoginTest {
             ChromeOptions options = new ChromeOptions();
 
             // Run Chrome in Headless Mode
-//            options.addArguments("--headless=new");  // Use new headless mode
+            options.addArguments("--headless=new");  // Use new headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--window-size=1920,1080");
+            options.addArguments("--user-data-dir=/tmp/chrome-profile"); // Specify a unique directory
+
 
             driver = new ChromeDriver(options);
             System.out.println("✅ WebDriver initialized successfully!");
