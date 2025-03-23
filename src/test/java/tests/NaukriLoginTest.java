@@ -24,12 +24,11 @@ public class NaukriLoginTest {
             ChromeOptions options = new ChromeOptions();
 
             // Run Chrome in Headless Mode
-            options.addArguments("--headless=new");  // Use new headless mode
+//            options.addArguments("--headless=new");  // Use new headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--window-size=1920,1080");
-            options.addArguments("--user-data-dir=/tmp/chrome-profile"); // Specify a unique directory
 
 
             driver = new ChromeDriver(options);
@@ -50,6 +49,9 @@ public class NaukriLoginTest {
         String email = System.getenv("NAUKRIUSERNAME");
         String password = System.getenv("NAUKRIPASSWORD");
 
+        System.out.println("Email: " + email);
+        System.out.println("Password: " + password);
+        
         if (email == null || password == null) {
             System.out.println("❌ Credentials not found! Set NAUKRI_EMAIL and NAUKRI_PASSWORD.");
             return;
