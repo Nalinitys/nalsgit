@@ -46,8 +46,8 @@ public class NaukriLoginTest {
             System.out.println("❌ Test failed: WebDriver is not initialized!");
             return;
         }
-        String email = System.getenv("NAUKRIUSERNAME");
-        String password = System.getenv("NAUKRIPASSWORD");
+        String email = System.getenv("NAUKRIUSERNAME_USR");
+        String password = System.getenv("NAUKRIUSERNAME_PSW");
 
         System.out.println("Email: " + email);
         System.out.println("Password: " + password);
