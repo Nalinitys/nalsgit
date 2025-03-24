@@ -24,7 +24,7 @@ public class NaukriLoginTest {
             ChromeOptions options = new ChromeOptions();
 
             // Run Chrome in Headless Mode
-//            options.addArguments("--headless=new");  // Use new headless mode
+//            options.addArguments("--headless=new");  // Use new headless mode- not launching browser in jenkins
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
